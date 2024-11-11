@@ -1,0 +1,49 @@
+<section class="mb-4">
+    <h2>{{"home.popularProducts" |translate}}:</h2>
+    <input [(ngModel)]="text" type="search" [placeholder]="'home.search' |translate" class="w-50 form-control  mx-auto my-2">
+    <div class="row g-3">
+   @for (product of productlist().slice(this.startIndex,this.endIndex) | search : text; track product.id) {
+    <div class="col-md-2">
+        <div class="product p-2">
+            <div [routerLink]="['/details', product._id]">
+                <img [src]="product.imageCover" class="w-100" [alt]="product.title">
+                <h3 class="small text-main">{{product.category.name |trimtext:1}}</h3>
+                <h4 class="h6">{{product.title| trimtext :2}}</h4>
+            </div>
+            
+
+            <div class="d-flex justify-content-between align-items-center">
+<span>{{product.price}} {{"home.egp" |translate}}</span>
+<div>
+
+    @for (num of [1,2,3,4,5].slice(0 , product.ratingsAverage ) ; track $index) {
+        <span><i class="fas fa-star rating-color"></i></span>
+    }
+@if ( product.ratingsAverage % 1 !== 0) {
+    <i class="fa-solid fa-star-half-stroke rating-color"></i>
+}
+    
+<span class="text-muted">{{product.ratingsAverage}}</span>
+</div>
+            </div>
+        <button class="btn-main w-100" (click)="addcart(product.id)">{{"home.addtocart" |translate}}</button>
+
+        </div>
+    </div>
+   }
+    </div>
+   <div class="d-flex justify-content-center align-items-center">
+    <div class="m-auto my-2">
+        @if (totalPages() > 1) {
+            <button class="btn btn-main mx-1"
+            *ngFor="let page of [].constructor(totalPages()); let i = index"
+            [class.active]="currentPage() === i + 1"
+            (click)="changePage(i + 1)">
+            {{ i + 1 }}
+          </button>
+        }
+    </div>
+    
+   </div>
+
+</section>

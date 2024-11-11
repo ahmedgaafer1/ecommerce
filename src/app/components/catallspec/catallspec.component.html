@@ -1,0 +1,27 @@
+@if(categorylist() && categorylist()!.length > 0) { 
+    <section>
+        <div class="row r-2 m-4 g-3">
+            @for (item of categorylist() ; track item._id) {
+                <div class="col-md-3 my-2">
+                    <div class="product p-2 m-auto" >
+                        <div [routerLink]="['/details', item._id]"  >
+                            <img [src]="item.imageCover" class="w-100"  [alt]="item.title">
+                            <h3 class="text-center h3 text-main ">{{ item.title |trimtext:2}}</h3>
+                            <p class=" h6 .text-clamp ">{{ truncateText(item.description, 30) }}</p>
+                        </div>
+                        <button class="btn-main w-100 cr" (click)="addcart(item._id)">Add Product</button>
+                    </div>
+                </div>
+            }
+        </div>
+    </section>
+}
+@else { 
+    <div class="d-flex justify-content-center align-items-center">
+        <div class="m-2">
+            <i class="fa-solid fa-x custom-icon-size"></i>
+        </div>
+    </div>
+    <h3 class="text-center h2">No Products Found</h3>
+    <p class="text-center h5">It looks like there are no products available in this category. Please check back later or explore other categories.</p>
+}

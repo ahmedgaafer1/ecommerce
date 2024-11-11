@@ -1,0 +1,12 @@
+.custom-icon-size {
+    font-size: 100px;
+}
+
+.text-clamp {
+    display: -webkit-box;
+    -webkit-line-clamp: 3; 
+    line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}

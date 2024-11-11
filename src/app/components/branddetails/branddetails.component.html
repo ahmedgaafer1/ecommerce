@@ -1,0 +1,19 @@
+@if(brandlist() && brandlist()!.length > 0) { 
+    <section>
+        <div class="row r-2 m-4">
+            @for (item of brandlist() ; track item._id) {
+                <div class="col-md-3 my-0">
+                    <div class="product p-2 m-auto" >
+                        <div [routerLink]="['/details', item._id]"  >
+                            <img [src]="item.imageCover" class="w-100"  [alt]="item.title">
+                            <h3 class="text-center h3 text-main ">{{ item.title |trimtext:2}}</h3>
+                            <p class=" h6 .text-clamp ">{{ truncateText(item.description, 70) }}</p>
+                        </div>
+                        <button class="btn-main w-100 cr" (click)="addcart(item._id)">Add Product</button>
+                    </div>
+                </div>
+            }
+        </div>
+    </section>
+}
+

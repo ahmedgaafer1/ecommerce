@@ -1,0 +1,60 @@
+{
+    "navbar":{
+        "home":"Home",
+        "products":"Products",
+        "categories":"Categories",
+        "brands":"Brands",
+        "signout":"SignOut",
+        "lang":"Lang",
+        "orders":"Orders"
+    },
+    "home":{
+       "popularcategories":"Popular Categories",
+       "popularProducts":"Popular Products",
+       "search":"Search here by name",
+       "addtocart":"Add to cart",
+       "egp":"EGP"
+    },
+    "footer":{
+        "shareapplink":"Share App Link",
+        "paymentpartners":"Payment Partners",
+        "GetTheFreshCartApp":"Get The FreshCart App",
+        "description":"We Will Send You a Link, Open it on Your Phone to download the app",
+        "email":"Email",
+        "GetDeliverieswithFreshCart":"Get Deliveries with FreshCart"
+    },
+    "login":{
+        "Loginnow":"Login now",
+        "email":"Email",
+        "password":"Password",
+        "required":"Required",
+        "login":"Login",
+        "forgotPassword":"Forgot Password",
+        "EnterValidEmail":"Enter Valid Email",
+        "must":"Must be at least 6 chars you might right it wrong",
+        "success":"Success"
+    },
+    "reg":{
+        "regnow":"Register now",
+        "name":"Name",
+        "NameShould1":"Name Should be more than or equal  3 chars",
+        "NameShould2":"Name Should be less than or equal  20 chars",
+        "email":"Email",
+        "phone":"Phone",
+        "acceptonly":"Accept only egypt phone numbers",
+        "password":"Password",
+        "mustbe":"Must be at least 6 chars",
+        "repassword":"Repassword",
+        "mismatch":"Mismatch password",
+        "required":"Required",
+        "reg":"Register",
+        "EnterValidEmail":"Enter Valid Email",
+        "must":"Must be at least 6 chars you might right it wrong",
+        "success":"Success"
+    },
+    "navauth":{
+        "login":"Login",
+        "register":"Register"
+    }
+
+}

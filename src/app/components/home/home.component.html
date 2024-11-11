@@ -1,0 +1,94 @@
+<!-- static slider -->
+<section>
+    <div class="row g-0">
+        <div class="col-md-10">
+            <div>
+                <owl-carousel-o [options]="customOptionsmain">
+                    <ng-template carouselSlide> <img src="./assets/images/img1.avif" height="300px" class="w-100" alt=""></ng-template>  
+                    <ng-template carouselSlide> <img src="./assets/images/img2.avif" height="300px" class="w-100" alt=""></ng-template>  
+                    <ng-template carouselSlide> <img src="./assets/images/img3.avif" height="300px" class="w-100" alt=""></ng-template>  
+                    <ng-template carouselSlide> <img src="./assets/images/img4.avif" height="300px" class="w-100" alt=""></ng-template>  
+                    <ng-template carouselSlide> <img src="./assets/images/img5.avif" height="300px" class="w-100" alt=""></ng-template>  
+                    <ng-template carouselSlide> <img src="./assets/images/img6.avif" height="300px" class="w-100" alt=""></ng-template>  
+                    <ng-template carouselSlide> <img src="./assets/images/img7.avif" height="300px" class="w-100" alt=""></ng-template>  
+                 
+                  </owl-carousel-o>
+               
+            </div>
+        </div>
+        <div class="col-md-2">
+            <div>
+                <!-- grocery-banner.png -->
+                <img src="../../../assets/images/slider-image-2.jpeg" class="w-100" height="150px" alt="">
+                <img src="../../../assets/images/slider-image-3.jpeg"class="w-100" height="150px" alt="">
+            </div>
+        </div>
+    </div>
+</section>
+<!-- categories -->
+<section class="my-2">
+    <h2>{{"home.popularcategories" | translate}}</h2>
+    <owl-carousel-o [options]="customOptionscat">
+
+       @for (cat of categorylist() ; track cat._id) {
+
+        <ng-template carouselSlide >
+         <div [routerLink]="['/catdetails', cat._id]">
+            <img [src]="cat.image" class="w-100" height="250px" [alt]="cat.name" >
+            <h3 class="h6 text-main">{{cat.name}}</h3>
+         </div>
+          </ng-template>
+       }
+    
+      </owl-carousel-o>
+</section>
+<!-- products -->
+<section class="mb-4">
+    <h2>{{"home.popularProducts" |translate}}:</h2>
+    <input [(ngModel)]="text" type="search" [placeholder]="'home.search' |translate" class="w-50 form-control  mx-auto my-2">
+    <div class="row g-3">
+   @for (product of productlist().slice(this.startIndex,this.endIndex) | search : text; track product.id) {
+    <div class="col-md-2">
+        <div class="product p-2">
+            <div [routerLink]="['/details', product._id]">
+                <img [src]="product.imageCover" class="w-100" [alt]="product.title">
+                <h3 class="small text-main">{{product.category.name |trimtext:1}}</h3>
+                <h4 class="h6">{{product.title| trimtext :2}}</h4>
+            </div>
+            
+
+            <div class="d-flex justify-content-between align-items-center">
+<span>{{product.price}} {{"home.egp" |translate}}</span>
+<div>
+
+    @for (num of [1,2,3,4,5].slice(0 , product.ratingsAverage ) ; track $index) {
+        <span><i class="fas fa-star rating-color"></i></span>
+    }
+@if ( product.ratingsAverage % 1 !== 0) {
+    <i class="fa-solid fa-star-half-stroke rating-color"></i>
+}
+    
+<span class="text-muted">{{product.ratingsAverage}}</span>
+</div>
+            </div>
+        <button class="btn-main w-100" (click)="addcart(product.id)">{{"home.addtocart" |translate}}</button>
+
+        </div>
+    </div>
+   }
+
+    </div>
+    <div class="d-flex justify-content-center align-items-center">
+        <div class="m-auto my-2">
+            @if (totalPages() > 1) {
+                <button class="btn btn-main mx-1"
+                *ngFor="let page of [].constructor(totalPages()); let i = index"
+                [class.active]="currentPage() === i + 1"
+                (click)="changePage(i + 1)">
+                {{ i + 1 }}
+              </button>
+            }
+        </div>
+        
+       </div>
+</section>

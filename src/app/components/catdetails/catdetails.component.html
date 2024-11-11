@@ -1,0 +1,20 @@
+@if (speccategory != null) {
+    <section class="my-1">
+        <div class="row align-items-center justify-content-center  ">
+            <div class="col-md-4">
+                <div>
+                            <img [src]="speccategory.image" class="w-100" height="400px" [alt]="speccategory.name">
+                </div>
+            </div>
+            <div class="col-md-12">
+                <div>
+                    <h2 class="text-center">{{speccategory.name}}</h2>
+           
+                                <button class="btn-main w-100">+Add to cart</button>
+    
+                </div>
+            </div>
+        </div>
+    </section>
+    
+}
