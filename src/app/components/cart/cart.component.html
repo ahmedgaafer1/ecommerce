@@ -26,7 +26,14 @@
     </div>
 }
 
-    <button [routerLink]="['/orders' , cartdetails._id]" class="btn-main mt-2"> Orders</button>
+    <!-- <button [routerLink]="['/orders' , cartdetails._id]" class="btn-main mt-2"> Order</button> -->
+    <button *ngIf="cartnumbof() > 0; else showMessagee" [routerLink]="['/orders', cartdetails._id]" class="btn-main mt-2">Orders</button>
+
+    <ng-template #showMessagee>
+        
+      <button class="btn-main mt-2" (click)="showMessage()">Order</button>
+    </ng-template>
+    
 
 
 </section>

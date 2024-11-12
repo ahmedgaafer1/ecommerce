@@ -1,15 +1,15 @@
-import { Component, inject, OnInit } from '@angular/core';
-import { CartService } from '../../core/services/cart.service';
-import { Icart } from '../../core/interfaces/icart';
-import { CurrencyPipe } from '@angular/common';
-import { SweetalertService } from '../../core/services/sweetalert.service';
+import { CurrencyPipe, NgIf } from '@angular/common';
+import { Component, inject, OnInit, signal, WritableSignal } from '@angular/core';
 import { RouterLink } from '@angular/router';
+import { Icart } from '../../core/interfaces/icart';
+import { SweetalertService } from '../../core/services/sweetalert.service';
+import { CartService } from './../../core/services/cart.service';
 
 
 @Component({
   selector: 'app-cart',
   standalone: true,
-  imports: [CurrencyPipe , RouterLink],
+  imports: [CurrencyPipe , RouterLink , NgIf],
   templateUrl: './cart.component.html',
   styleUrl: './cart.component.scss'
 })
@@ -17,11 +17,14 @@ export class CartComponent implements OnInit {
 cartdetails:Icart = {} as Icart ;
   private readonly _CartService = inject(CartService);
   private readonly _SweetalertService = inject(SweetalertService)
+  cartnumbof:WritableSignal<number>=signal(this._CartService.countnum());
+
   ngOnInit(): void {
       this._CartService.getproductscart().subscribe({
         next:(res)=>{
 console.log(res.data);
 this.cartdetails = res.data ;
+
         },
         error:(err)=>{
 console.log(err);
@@ -56,20 +59,31 @@ this.cartdetails = res.data ;
     })
   }
   Clearcartdata():void {
-    this._CartService.ClearallData().subscribe({
-      next:(res)=>{
-        console.log(res);
-        if(res.message="success" ) {
-          this._SweetalertService.showSuccessTopEnd(res.message )
-this.cartdetails = {} as Icart ;
-this._CartService.countnum.set(0);
-
+    if(this._CartService.countnum() > 0) {
+      this._CartService.ClearallData().subscribe({
+        next:(res)=>{
+          console.log(res);
+          if(res.message="success" ) {
+            this._SweetalertService.showSuccessTopEnd(res.message )
+  this.cartdetails = {} as Icart ;
+  this._CartService.countnum.set(0);
+  this.cartnumbof.set(0);
+  
+          }
+        },
+        error:(err)=>{
+          console.log(err);
+  
         }
-      },
-      error:(err)=>{
-        console.log(err);
+      })
+    }
+    else {
+      this._SweetalertService.errorAlert('The cart is empty')
 
-      }
-    })
+    }
+   
+  }
+  showMessage(): void {
+    this._SweetalertService.errorAlert("Your cart is empty. Please add items to your cart before proceeding with the order.");
   }
 }

@@ -11,12 +11,13 @@
     rgba(145, 158, 171, 0.12) 0px 1px 10px 0px;
   --font-family: "Encode Sans Expanded", sans-serif;
   --rating-color: #ffc908;
-  --main-coloro: #1e1e2f; /* لون أساسي داكن يضفي مظهرًا احترافيًا */
-  --accent-color: #ff6347; /* لون برتقالي مائل للأحمر يضيف طابعًا ديناميكيًا */
-  --hover-color: #e04e37; /* لون فاتح للتركيز والتفاعل */
-  --focus-shadow: rgba(255, 99, 71, 0.4);
-  --badge-bg: #ffcc00; /* لون الشارة */
-  --badge-color: #ffffff;
+  --main-color: #0aad0a;
+  --light-color: #f0f3f2;
+  --focus-shadow: rgba(0, 140, 186, 0.4);
+  --accent-color: #ff6347;
+  --hover-color: #e04e37;
+  --badge-bg: #ffcc00;
+  --cart-active-bg: rgba(0, 140, 186, 0.1);
 }
 
 body {
@@ -100,31 +101,49 @@ a:hover {
 
 
 
+/* تصميم الـ nav-link */
+.nav-link:focus {
+  outline: none;
+  background-color: var(--cart-active-bg); /* لون الخلفية عند الضغط */
+  color: var(--accent-color);
+  box-shadow: 0 0 5px var(--focus-shadow); /* تأثير الـ shadow */
+  // border-radius: 5px;
+  transition: background-color 0.3s, box-shadow 0.3s, color 0.3s;
+}
+
 .cart-link {
-  color: var(--main-coloro);
+  color: var(--main-color);
   transition: color 0.3s ease, transform 0.3s ease;
   display: flex;
   align-items: center;
   gap: 0.4rem;
 }
 
-.cart-link:hover,
 .cart-link:focus,
 .cart-link.active-link {
   color: var(--accent-color);
-  transform: scale(1.05); /* تكبير طفيف عند التفاعل */
+  transform: scale(1.05); 
+  padding-block: 15px ;
+}
+.cart-link:hover {
+  color: var(--accent-color);
+  transform: scale(1.05); 
 }
 
 .cart-link:focus {
   outline: none;
-  box-shadow: 0 0 8px var(--focus-shadow);
+  // box-shadow: 0 0 8px var(--focus-shadow);
+  background-color: var(--cart-active-bg); /* لون الخلفية عند التركيز */
+  // height: 100% !important;
+  padding-block: 15px ;
 }
 
+/* تصميم الشارة */
 .cart-badge {
   background-color: var(--badge-bg);
-  color: var(--badge-color);
-  font-size: 0.7rem;
-  padding: 0.4em 0.5em;
+  color: #ffffff;
+  font-size: 0.67rem;
+  padding: 0.2em 0.4em;
   border-radius: 50%;
   font-weight: bold;
   transition: background-color 0.3s ease;
@@ -136,12 +155,9 @@ a:hover {
 .cart-link.active-link .cart-badge {
   background-color: var(--accent-color);
 }
-.nav-link:focus {
-  outline: none;
-  background-color: #008CBA; 
-  color: #FFFFFF;
-  border-radius: 5px;
-  box-shadow: 0 0 10px rgba(0, 140, 186, 0.4), 0 0 15px rgba(0, 140, 186, 0.2);
-  border: 1px solid #005f7a;
-  transition: background-color 0.3s, box-shadow 0.3s, border-color 0.3s;
-}
+
+// .cart-link.active-link,
+// .cart-link:focus,
+// .cart-link:hover {
+//  height: 100% !important;
+// }

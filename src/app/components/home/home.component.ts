@@ -63,7 +63,7 @@ customOptionscat: OwlOptions = {
   rtl:true,
   autoplayTimeout:2500,
   navSpeed: 700,
-  navText: ['<i class="fa-solid fa-backward"></i>', '<i class="fa-solid fa-forward"></i>'],
+  navText: ['<i class="fa-solid fa-forward"></i>', '<i class="fa-solid fa-backward"></i>'],
   responsive: {
     0: {
       items: 1
