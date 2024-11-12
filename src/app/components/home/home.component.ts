@@ -52,35 +52,55 @@ customOptionsmain: OwlOptions = {
  items:1,
   nav: true
 };
+// customOptionscat: OwlOptions = {
+//   loop: true,
+//   mouseDrag: true,
+//   touchDrag: true,
+//   pullDrag: false,
+//   dots: false,
+//   autoplay:true,
+//   autoplayHoverPause:true,
+//   rtl:true,
+//   autoplayTimeout:2500,
+//   navSpeed: 700,
+//   navText: ['<i class="fa-solid fa-forward"></i>', '<i class="fa-solid fa-backward"></i>'],
+//   responsive: {
+//     0: {
+//       items: 1
+//     },
+//     400: {
+//       items: 2
+//     },
+//     740: {
+//       items: 3
+//     },
+//     940: {
+//       items: 6
+//     }
+//   },
+//   nav: true
+// };
 customOptionscat: OwlOptions = {
   loop: true,
   mouseDrag: true,
   touchDrag: true,
   pullDrag: false,
   dots: false,
-  autoplay:true,
-  autoplayHoverPause:true,
-  rtl:true,
-  autoplayTimeout:2500,
+  autoplay: true,
+  autoplayHoverPause: true,
+  rtl: true,
+  autoplayTimeout: 2500,
   navSpeed: 700,
   navText: ['<i class="fa-solid fa-forward"></i>', '<i class="fa-solid fa-backward"></i>'],
   responsive: {
-    0: {
-      items: 1
-    },
-    400: {
-      items: 2
-    },
-    740: {
-      items: 3
-    },
-    940: {
-      items: 6
-    }
+    0: { items: 1 },
+    400: { items: 1 },
+    740: { items: 2 },
+    940: { items: 3 },
+    1240: { items: 4 }
   },
   nav: true
 };
-
 ngOnInit(): void {
   this._NgxSpinnerService.show();
    this.getallproductssub = this._ProductsService.getallproducts().subscribe({
