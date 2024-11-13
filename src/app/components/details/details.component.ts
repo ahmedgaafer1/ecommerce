@@ -6,12 +6,13 @@ import { Subscription } from 'rxjs';
 import { Iproducts } from '../../core/interfaces/iproducts';
 import { CartService } from '../../core/services/cart.service';
 import { ProductsService } from '../../core/services/products.service';
+import { TranslateModule } from '@ngx-translate/core';
 
 
 @Component({
   selector: 'app-details',
   standalone: true,
-  imports: [CarouselModule],
+  imports: [CarouselModule , TranslateModule],
   templateUrl: './details.component.html',
   styleUrl: './details.component.scss'
 })

@@ -5,14 +5,14 @@
     <label for="email">{{"login.email" |translate}}</label>
     <input type="email" id="email"  class="form-control" formControlName="email" >
    @if (loginform.get('email')?.errors && (loginform.get('email')?.touched || loginform.get('email')?.dirty)) {
-    <div class="alert alert-danger w-50">
+    <div class="alert alert-danger w-100">
 @if (loginform.get('email')?.getError('required')) {
     <p class="m-0">{{"login.required" |translate}}</p>
 
 }
 @if (loginform.get('email')?.getError('email')) {
     
-    <p class="m-0">{{"login.EnterValidEmail" |translate}}</p>
+    <p class="m-0 ">{{"login.EnterValidEmail" |translate}}</p>
 }    
     </div>
 
@@ -24,7 +24,7 @@
     <input type="password" id="password"  class="form-control" formControlName="password">
 @if (loginform.get('password')?.errors && (loginform.get('password')?.touched || loginform.get('password')?.dirty)) 
 {
-    <div class="alert alert-danger w-50">
+    <div class="alert alert-danger w-100">
         @if (loginform.get('password')?.getError('required')) {
             <p class="m-0">{{"login.required" |translate}}</p>
         }

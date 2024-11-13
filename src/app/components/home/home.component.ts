@@ -42,15 +42,22 @@ customOptionsmain: OwlOptions = {
   mouseDrag: true,
   touchDrag: true,
   pullDrag: false,
-  dots: false,
+  dots: true,
   autoplay:true,
   autoplayHoverPause:true,
-  autoplayTimeout:2500,
-  navSpeed: 700,
+  autoplayTimeout:4000,
+  navSpeed:6000,
   rtl:true,
-  navText: ['', ''],
+  
  items:1,
-  nav: true
+ responsive: {
+  0: { items: 1 },
+  400: { items: 1 },
+  740: { items: 1 },
+  940: { items: 1 },
+  1240: { items: 1 }
+},
+ 
 };
 // customOptionscat: OwlOptions = {
 //   loop: true,
@@ -90,7 +97,7 @@ customOptionscat: OwlOptions = {
   autoplayHoverPause: true,
   rtl: true,
   autoplayTimeout: 2500,
-  navSpeed: 700,
+  navSpeed: 1200,
   navText: ['<i class="fa-solid fa-forward"></i>', '<i class="fa-solid fa-backward"></i>'],
   responsive: {
     0: { items: 1 },

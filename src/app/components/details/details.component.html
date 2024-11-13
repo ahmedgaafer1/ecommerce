@@ -1,6 +1,6 @@
 @if (specproduct != null) {
     <section>
-        <h1 class=" text-center text-main my-2">Details Product</h1>
+        <h1 class=" text-center text-main my-2">{{"home.detprod"|translate}}</h1>
         <div class="row align-items-center">
             <div class="col-md-3">
                 <div>
@@ -39,7 +39,7 @@
                         <span class="text-muted">{{specproduct.ratingsAverage}}</span>
                         </div>
                                     </div>
-                                <button class="btn-main w-100" (click)="addcart()">+Add to cart</button>
+                                <button class="btn-main w-100" (click)="addcart()">+{{"home.addtocart" |translate}}</button>
     
                 </div>
             </div>

@@ -6,12 +6,13 @@ import { Icategoriestype } from '../../core/interfaces/icategoriestype';
 import { ProductsService } from '../../core/services/products.service';
 import { CartService } from '../../core/services/cart.service';
 import { ToastrService } from 'ngx-toastr';
+import { TranslateModule } from '@ngx-translate/core';
 
 
 @Component({
   selector: 'app-catallspec',
   standalone: true,
-  imports: [RouterLink ,TrimtextPipe],
+  imports: [RouterLink ,TrimtextPipe, TranslateModule],
   templateUrl: './catallspec.component.html',
   styleUrl: './catallspec.component.scss'
 })

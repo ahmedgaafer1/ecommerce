@@ -9,7 +9,7 @@
                             <h3 class="text-center h3 text-main ">{{ item.title |trimtext:2}}</h3>
                             <p class=" h6 .text-clamp ">{{ truncateText(item.description, 30) }}</p>
                         </div>
-                        <button class="btn-main w-100 cr" (click)="addcart(item._id)">Add Product</button>
+                        <button class="btn-main w-100 cr" (click)="addcart(item._id)">+{{"home.addtocart" |translate}}</button>
                     </div>
                 </div>
             }
@@ -22,6 +22,6 @@
             <i class="fa-solid fa-x custom-icon-size"></i>
         </div>
     </div>
-    <h3 class="text-center h2">No Products Found</h3>
-    <p class="text-center h5">It looks like there are no products available in this category. Please check back later or explore other categories.</p>
+    <h3 class="text-center h2">{{"allorders.noprod" |translate}}</h3>
+    <p class="text-center h5">{{"allorders.itlook" |translate}}</p>
 }

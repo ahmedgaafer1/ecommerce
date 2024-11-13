@@ -1,29 +1,96 @@
 <!-- static slider -->
 <section>
+
     <div class="row g-0">
-        <div class="col-md-10">
-            <div>
-                <owl-carousel-o [options]="customOptionsmain">
-                    <ng-template carouselSlide> <img src="./assets/images/img1.avif" height="300px" class="w-100" alt=""></ng-template>  
-                    <ng-template carouselSlide> <img src="./assets/images/img2.avif" height="300px" class="w-100" alt=""></ng-template>  
-                    <ng-template carouselSlide> <img src="./assets/images/img3.avif" height="300px" class="w-100" alt=""></ng-template>  
-                    <ng-template carouselSlide> <img src="./assets/images/img4.avif" height="300px" class="w-100" alt=""></ng-template>  
-                    <ng-template carouselSlide> <img src="./assets/images/img5.avif" height="300px" class="w-100" alt=""></ng-template>  
-                    <ng-template carouselSlide> <img src="./assets/images/img6.avif" height="300px" class="w-100" alt=""></ng-template>  
-                    <ng-template carouselSlide> <img src="./assets/images/img7.avif" height="300px" class="w-100" alt=""></ng-template>  
+        <div class="col-md-12 p-2">
+            <div class="mt-2  ">
+                <owl-carousel-o [options]="customOptionsmain" class=" px-2">
+                    <ng-template carouselSlide>
+                        <div class="back  position-relative">
+                            <img src="./../../assets/images/11.jpg" height="390px" class="w-100" alt="" class="rounded-0">
+                            <div class="overlay position-absolute w-100 h-100 bg-dark opacity-50"></div>
+                            <div class="position-absolute w-100 h-100 d-flex justify-content-center align-items-center flex-column text-center ">
+                                <div class="w-100 ">
+                                    <h2 class="hh">
+                                        {{"home.welcometofresh" |translate}}
+                                        </h2>
+                                </div>
+                                <div class="w-100">
+                                    <p >
+                                        {{"home.discover" |translate}}
+                                    </p >
+                                </div>
+                                <div >
+                                    <a routerLink="/products" class=" b">{{"home.shopnow" |translate}}</a>
+                                </div>
+                               
+                               
+                             
+                            </div>
+                        </div>
+                        
+                        </ng-template>  
+                        <ng-template carouselSlide>
+                            <div class="back  position-relative ">
+                                <img src="./../../assets/images/22.jpeg" height="390px" class="w-100" alt="" class="rounded-0">
+                                <div class="overlay position-absolute w-100 h-100 bg-dark opacity-50"></div>
+                                <div class="position-absolute w-100 h-100 d-flex justify-content-center align-items-center flex-column text-center ">
+                                    <div class="w-100 ">
+                                        <h2 class="hh">
+                                            {{"home.checkour" |translate}}
+                                            </h2>
+                                    </div>
+                                    <div class="w-100">
+                                        <p >
+                                            {{"home.exploreour" |translate}}
+                                        </p >
+                                    </div>
+                                    <div >
+                                        <a routerLink="/categories" class=" b"> {{"home.shopnow" |translate}}  </a>
+                                    </div>
+                                   
+                                   
+                                 
+                                </div>
+                            </div>
+                            
+                            </ng-template>  
+                            <ng-template carouselSlide>
+                                <div class="back  position-relative ">
+                                    <img src="./../../assets/images/33.webp" height="390px" class="w-100" alt="" class="rounded-0">
+                                    <div class="overlay position-absolute w-100 h-100 bg-dark opacity-50"></div>
+                                    <div class="position-absolute w-100 h-100 d-flex justify-content-center align-items-center flex-column text-center ">
+                                        <div class="w-100 ">
+                                            <h2 class="hh">
+                                                {{"home.popu" |translate}}
+                                                </h2>
+                                        </div>
+                                        <div class="w-100">
+                                            <p >
+                                               {{"home.dontmiss" |translate}}
+                                            </p >
+                                        </div>
+                                        <div >
+                                            <a routerLink="/brands" class=" b ">{{"home.shopnow" |translate}}</a>
+                                        </div>
+                                       
+                                       
+                                     
+                                    </div>
+                                </div>
+                                
+                                </ng-template>  
+                    
                  
                   </owl-carousel-o>
                
             </div>
         </div>
-        <div class="col-md-2">
-            <div>
-                <!-- grocery-banner.png -->
-                <img src="../../../assets/images/slider-image-2.jpeg" class="w-100" height="150px" alt="">
-                <img src="../../../assets/images/slider-image-3.jpeg"class="w-100" height="150px" alt="">
-            </div>
-        </div>
+   
     </div>
+
+
+   
 </section>
 <!-- categories -->
 <section class="my-2">
@@ -39,7 +106,7 @@
             <h3 class="h6 text-black">{{cat.name}}</h3>
             </div>
             <div class="w-100 ">
-                <button class="btn-main w-100">See Product</button>
+                <button class="btn-main w-100">{{"home.seeproduct"|translate}}</button>
             </div>
          </div>
           </ng-template>

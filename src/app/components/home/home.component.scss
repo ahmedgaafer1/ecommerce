@@ -1,0 +1,55 @@
+
+
+.back {
+    position: relative;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.751); 
+}
+
+.position-absolute {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.hh {
+    font-size: 2.4rem;
+    color: white;
+    font-weight: 600;
+}
+
+p {
+    color: white;
+    font-size: 1.5rem;
+
+
+}
+.b {
+    border: none;
+    padding-block: .9rem;
+    padding-inline: 1.5rem;
+    background-color:  #0AAD0A;
+  border-radius: 5px;
+  color: #fff;
+  cursor: pointer;
+  transition: background-color 0.5s;
+
+
+}
+.b:hover {
+
+    color: white;
+    border: none;
+    background-color:  #11bd11;
+ 
+
+}
+

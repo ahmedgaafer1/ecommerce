@@ -1,60 +1,82 @@
 {
-    "navbar":{
-        "home":"Home",
-        "products":"Products",
-        "categories":"Categories",
-        "brands":"Brands",
-        "signout":"SignOut",
-        "lang":"Lang",
-        "orders":"Orders"
+    "navbar": {
+        "home": "Home",
+        "products": "Products",
+        "categories": "Categories",
+        "brands": "Brands",
+        "signout": "SignOut",
+        "lang": "Lang",
+        "orders": "Orders"
     },
-    "home":{
-       "popularcategories":"Popular Categories",
-       "popularProducts":"Popular Products",
-       "search":"Search here by name",
-       "addtocart":"Add to cart",
-       "egp":"EGP"
+    "home": {
+        "popularcategories": "Popular Categories",
+        "popularProducts": "Popular Products",
+        "search": "Search here by name",
+        "addtocart": "Add to cart",
+        "egp": "EGP",
+        "welcometofresh": "Welcome to FreshCart",
+        "discover": "Discover our latest products",
+        "shopnow": "Shop now",
+        "seeproduct": "See Product",
+        "checkour": "Check out our various categories",
+        "exploreour": "Explore our divers range of products",
+        "popu": "Popular brands",
+        "dontmiss": "Don't miss on the best Brands!",
+        "detprod": "Details Product"
     },
-    "footer":{
-        "shareapplink":"Share App Link",
-        "paymentpartners":"Payment Partners",
-        "GetTheFreshCartApp":"Get The FreshCart App",
-        "description":"We Will Send You a Link, Open it on Your Phone to download the app",
-        "email":"Email",
-        "GetDeliverieswithFreshCart":"Get Deliveries with FreshCart"
+    "footer": {
+        "shareapplink": "Share App Link",
+        "paymentpartners": "Payment Partners",
+        "GetTheFreshCartApp": "Get The FreshCart App",
+        "description": "We Will Send You a Link, Open it on Your Phone to download the app",
+        "email": "Email",
+        "GetDeliverieswithFreshCart": "Get Deliveries with FreshCart"
     },
-    "login":{
-        "Loginnow":"Login now",
-        "email":"Email",
-        "password":"Password",
-        "required":"Required",
-        "login":"Login",
-        "forgotPassword":"Forgot Password",
-        "EnterValidEmail":"Enter Valid Email",
-        "must":"Must be at least 6 chars you might right it wrong",
-        "success":"Success"
+    "login": {
+        "Loginnow": "Login now",
+        "email": "Email",
+        "password": "Password",
+        "required": "Required",
+        "login": "Login",
+        "forgotPassword": "Forgot Password",
+        "EnterValidEmail": "Enter Valid Email",
+        "must": "Must be at least 6 chars you might right it wrong",
+        "success": "Success"
     },
-    "reg":{
-        "regnow":"Register now",
-        "name":"Name",
-        "NameShould1":"Name Should be more than or equal  3 chars",
-        "NameShould2":"Name Should be less than or equal  20 chars",
-        "email":"Email",
-        "phone":"Phone",
-        "acceptonly":"Accept only egypt phone numbers",
-        "password":"Password",
-        "mustbe":"Must be at least 6 chars",
-        "repassword":"Repassword",
-        "mismatch":"Mismatch password",
-        "required":"Required",
-        "reg":"Register",
-        "EnterValidEmail":"Enter Valid Email",
-        "must":"Must be at least 6 chars you might right it wrong",
-        "success":"Success"
+    "reg": {
+        "regnow": "Register now",
+        "name": "Name",
+        "NameShould1": "Name Should be more than or equal  3 chars",
+        "NameShould2": "Name Should be less than or equal  20 chars",
+        "email": "Email",
+        "phone": "Phone",
+        "acceptonly": "Accept only egypt phone numbers",
+        "password": "Password",
+        "mustbe": "Must be at least 6 chars",
+        "repassword": "Repassword",
+        "mismatch": "Mismatch password",
+        "required": "Required",
+        "reg": "Register",
+        "EnterValidEmail": "Enter Valid Email",
+        "must": "Must be at least 6 chars you might right it wrong",
+        "success": "Success"
     },
-    "navauth":{
-        "login":"Login",
-        "register":"Register"
+    "navauth": {
+        "login": "Login",
+        "register": "Register"
+    },
+    "allorders": {
+        "customer": "Customer",
+        "name": "Name",
+        "mail": "Mail",
+        "shipaddress": "Shipping Adress",
+        "city": "City",
+        "details": "Details u added",
+        "Phone": "Phone",
+        "Order": "Order",
+        "paytype": "Payment type",
+        "isd": "isDelivered ",
+        "noprod": "No Products Found",
+        "itlook": "It looks like there are no products available in this category. Please check back later or explore other categories."
     }
-
 }

@@ -11,7 +11,7 @@
             }" formControlName="name" type="text"  id="name" class="form-control">
 
             @if (registerform.get('name')?.errors && ( registerform.get('name')?.touched || registerform.get('name')?.dirty)) {
-                <div class="alert alert-danger w-50">
+                <div class="alert alert-danger w-100">
 @if (registerform.get('name')?.getError('required')) {
     <p class="m-0">{{"reg.required" |translate}}</p>
 
@@ -35,7 +35,7 @@
                 'is-invalid': registerform.get('email')?.errors && ( registerform.get('email')?.touched || registerform.get('email')?.dirty)
             }" formControlName="email" type="email"  id="email" class="form-control">
 @if (registerform.get('email')?.errors && ( registerform.get('email')?.touched || registerform.get('email')?.dirty)) {  
-    <div class="alert alert-danger w-50 ">
+    <div class="alert alert-danger w-100 ">
         @if (registerform.get('email')?.getError('required')) {
             <p class="m-0">{{"reg.required" |translate}}</p>
         }
@@ -53,7 +53,7 @@
                 'is-invalid': registerform.get('phone')?.errors && ( registerform.get('phone')?.touched || registerform.get('phone')?.dirty)
             }" formControlName="phone" type="tel"  id="phone" class="form-control">
             @if (registerform.get('phone')?.errors && ( registerform.get('phone')?.touched || registerform.get('phone')?.dirty)) {  
-                <div class="alert alert-danger w-50 ">
+                <div class="alert alert-danger w-100 ">
                     @if (registerform.get('phone')?.getError('required')) {
                         <p class="m-0">{{"reg.required" |translate}}</p>
                     }
@@ -70,7 +70,7 @@
                 'is-invalid': registerform.get('password')?.errors && ( registerform.get('password')?.touched || registerform.get('password')?.dirty)
             }"  formControlName="password" type="password"  id="password" class="form-control">
             @if (registerform.get('password')?.errors && ( registerform.get('password')?.touched || registerform.get('password')?.dirty)) {  
-                <div class="alert alert-danger w-50 ">
+                <div class="alert alert-danger w-100 ">
                     @if (registerform.get('password')?.getError('required')) {
                         <p class="m-0">{{"reg.required" |translate}}</p>
                     }
@@ -87,7 +87,7 @@
                 'is-invalid': registerform.getError('mismatch')  && ( registerform.get('rePassword')?.touched || registerform.get('rePassword')?.dirty)
             }" formControlName="rePassword" type="password"  id="rePassword" class="form-control">
           @if (registerform.getError('mismatch') &&  (registerform.get('rePassword')?.touched || registerform.get('rePassword')?.dirty)) {
-            <p class="alert alert-danger w-50">{{"reg.mismatch" |translate}}</p>
+            <p class="alert alert-danger w-100">{{"reg.mismatch" |translate}}</p>
           }
         </div>
      <!-- if we want to put disabled on btn [disabled]="registerform.invalid || isloading " -->
@@ -101,7 +101,7 @@
 
         </button>
         @if (msgerr) {
-            <p class="alert alert-danger w-50 m-0">{{msgerr}}</p>
+            <p class="alert alert-danger w-100 m-0">{{msgerr}}</p>
         }
         @if (msgsuccess==true) {
             <p>{{"reg.reg" |translate}}</p>

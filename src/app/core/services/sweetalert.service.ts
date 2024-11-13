@@ -46,7 +46,7 @@ export class SweetalertService {
   }
 
   errorAlert(message: string) {
-    Swal.fire('خطأ', message, 'error');
+    Swal.fire('error', message, 'error');
   }
 
 }

@@ -6,11 +6,12 @@ import { ActivatedRoute, RouterLink } from '@angular/router';
 import { Ibrand1 } from '../../core/interfaces/ibrand1';
 import { TrimtextPipe } from '../../core/pipes/trimtext.pipe';
 import { Subscription } from 'rxjs';
+import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-branddetails',
   standalone: true,
-  imports: [RouterLink , TrimtextPipe],
+  imports: [RouterLink , TrimtextPipe ,TranslateModule],
   templateUrl: './branddetails.component.html',
   styleUrl: './branddetails.component.scss'
 })

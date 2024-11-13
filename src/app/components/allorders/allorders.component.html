@@ -2,11 +2,11 @@
     @for (item of allordersprod ; track item.id ) {
         <div class="row my-2  gap-4  ">
             <div class="col-md-8 bg-main-light shadow rounded-4 p-4 my-2 ms-4 me-1 ">
-                <h1 class="h3 w-100"> Order # {{item._id}}</h1>
+                <h1 class="h3 w-100"> {{"allorders.Order" | translate}} # {{item._id}}</h1>
                 <div class="d-flex justify-content-between align-items-center flex-wrap mt-4">
                     <p class="w-25  h5"> {{item.paidAt | date}}</p>
-                    <p class="w-25  h5">isDelivered : {{item.isDelivered}}</p>
-                    <p class="w-25 h5">Payment type : {{item.paymentMethodType}}</p> 
+                    <p class="w-25  h5">{{"allorders.isd" |translate}} : {{item.isDelivered}}</p>
+                    <p class="w-25 h5">{{"allorders.paytype" |translate}} : {{item.paymentMethodType}}</p> 
                 </div>
 
                 @for (g of item.cartItems; track $index) {
@@ -18,8 +18,8 @@
                             <div>
                                 <h3 class="h5 fw-bold"> {{g.product.title}}</h3>
                                <p class="h6" >Category : {{g.product.category.name}}</p>
-                                <p class="h6" >Brand : {{g.product.brand.name}}</p> 
-                                <p class="h6" >Brand : {{g.product.ratingsAverage}}</p>
+                                <!-- <p class="h6" >Brand : {{g.product.brand.name}}</p>  -->
+                                <p class="h6" >Rating : {{g.product.ratingsAverage}}</p>
                             </div>
                         </div>
                         <div class="col-md-2  d-flex justify-content-center align-items-center">
@@ -44,13 +44,13 @@
              </div>
 
              <div class="col-md-3 bg-main-light shadow rounded-4 p-4 my-2 ms-5 me-0 d-flex  align-items-center flex-wrap  "> 
-                    <h2 class="h3 w-100 text-center">Customer</h2>
-                    <p> Name: {{item.user.name}}</p>
-                    <p> Mail <i class="fa-regular fa-envelope"></i> : {{item.user.email}}</p>
-    <h2 class="h4 w-100 text-center">Shipping Adress</h2>
-    <p class="w-100">City <i class="fa-solid fa-location-dot"></i> : {{item.shippingAddress.city}}</p>
-    <p>Details u added <i class="fa-solid fa-info"></i> : {{item.shippingAddress.details}}</p>
-    <p>Phone <i class="fa-solid fa-phone"></i> : {{item.shippingAddress.phone}}</p>
+                    <h2 class="h3 w-100 text-center">{{"allorders.customer" | translate}}</h2>
+                    <p> {{"allorders.name" | translate}}: {{item.user.name}}</p>
+                    <p> {{"allorders.mail" | translate}} <i class="fa-regular fa-envelope"></i> : {{item.user.email}}</p>
+    <h2 class="h4 w-100 text-center">{{"allorders.shipaddress" | translate}}</h2>
+    <p class="w-100">{{"allorders.city" | translate}} <i class="fa-solid fa-location-dot"></i> : {{item.shippingAddress.city}}</p>
+    <p>{{"allorders.details" | translate}} <i class="fa-solid fa-info"></i> : {{item.shippingAddress.details}}</p>
+    <p>{{"allorders.Phone" | translate}} <i class="fa-solid fa-phone"></i> : {{item.shippingAddress.phone}}</p>
           </div>
 
         </div>

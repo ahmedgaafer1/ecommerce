@@ -3,26 +3,121 @@
 @import 'ngx-owl-carousel-o/lib/styles/scss/owl.carousel';
 @import 'ngx-owl-carousel-o/lib/styles/scss/owl.theme.default';
 @import 'ngx-toastr/toastr';
+// الاصل
+// :root {
+//   // light mode
+//   --main-color: #0aad0a;
+//   --light-color: #f0f3f2;
+//   --shadow: rgba(145, 158, 171, 0.2) 0px 2px 4px -1px,
+//     rgba(145, 158, 171, 0.14) 0px 4px 5px 0px,
+//     rgba(145, 158, 171, 0.12) 0px 1px 10px 0px;
+//   --font-family: "Encode Sans Expanded", sans-serif;
+//   --rating-color: #ffc908;
+//   --light-color: #f0f3f2;
+//   --focus-shadow: rgba(0, 140, 186, 0.4);
+//   --accent-color: #ff6347;
+//   --hover-color: #e04e37;
+//   --badge-bg: #ffcc00;
+//   --cart-active-bg: rgba(0, 140, 186, 0.1);
+
+//   // Dark Mode Colors
+//   --main-bg-dark: #121212;
+//   --card-bg-dark: #1e1e1e;
+//   --text-color-dark: #e0e0e0;
+//   --link-hover-dark: #ffa07a;
+//   --button-bg-dark: #333;
+//   --input-bg-dark: #444;
+// }
+// body {
+//   font-family: var(--font-family) !important;
+// }
+
 :root {
+  /* Light Mode Colors */
   --main-color: #0aad0a;
   --light-color: #f0f3f2;
   --shadow: rgba(145, 158, 171, 0.2) 0px 2px 4px -1px,
     rgba(145, 158, 171, 0.14) 0px 4px 5px 0px,
     rgba(145, 158, 171, 0.12) 0px 1px 10px 0px;
   --font-family: "Encode Sans Expanded", sans-serif;
-  --rating-color: #ffc908;
-  --main-color: #0aad0a;
-  --light-color: #f0f3f2;
-  --focus-shadow: rgba(0, 140, 186, 0.4);
-  --accent-color: #ff6347;
-  --hover-color: #e04e37;
+  --rating-color:  #ffa500;
+  --accent-color: #e04e37;
+  --hover-color: #cc3d30;
   --badge-bg: #ffcc00;
   --cart-active-bg: rgba(0, 140, 186, 0.1);
+  --focus-shadow: rgba(0, 140, 186, 0.4);
+  
+  /* Dark Mode Colors */
+  --main-bg-dark: #121212;
+  --card-bg-dark: #1e1e1e;
+  --text-color-dark: #e0e0e0;
+  --link-dark: #0aad0a;
+  --link-hover-dark: #ffa07a;
+  --button-bg-dark: #0AAD0A;
+  --input-bg-dark: white;
 }
-
 body {
   font-family: var(--font-family) !important;
+  // background-color: var(--light-color);
+  background-color: white;
+  color: black;
 }
+
+/* Dark Mode Styling */
+body.dark-mode {
+  background-color: var(--main-bg-dark);
+  color: var(--text-color-dark);
+}
+
+body.dark-mode .navbar, 
+body.dark-mode .card-content, 
+body.dark-mode .product, 
+body.dark-mode .dropdown-menu {
+  background-color: var(--card-bg-dark) !important;
+}
+
+body.dark-mode a,
+body.dark-mode a:hover {
+  color: var(--text-color-dark);
+}
+
+body.dark-mode .active-link, 
+body.dark-mode .btn-main {
+  background-color: var(--button-bg-dark) !important;
+  color: var(--text-color-dark) !important;
+}
+
+body.dark-mode input, 
+body.dark-mode .form-control {
+  background-color: var(--input-bg-dark) !important;
+  color: var(--text-color-dark);
+}
+
+
+
+body.dark-mode .product:hover {
+  box-shadow: 0 0 10px #555;
+}
+
+body.dark-mode .owl-theme .owl-dots .owl-dot span {
+  background: var(--text-color-dark);
+}
+
+body.dark-mode .owl-theme .owl-dots .owl-dot.active span {
+  background: var(--link-hover-dark);
+}
+body.dark-mode .cart-badge {
+  background-color: var(--card-bg-dark);
+  
+}
+body.dark-mode .rating-colo {
+  // background-color: var(--card-bg-dark);
+  background-color:var(--button-bg-dark) ;
+}
+.rating-color {
+  color: var(--rating-color); /* لون النجوم الجديد */
+}
+// Dark mode End
 
 .nav-link {
   transition: unset !important;
@@ -73,8 +168,13 @@ a:hover {
   background-color: var(--main-color) !important;
 }
 .bg-main-light {
-  background-color: var(--light-color) !important;
+  background-color: #F8F9FA !important;
 }
+body.dark-mode .bg-main-light {
+  background-color: var(--card-bg-dark) !important; /* لون الفوتر في الـ Dark Mode يتطابق مع الـ Navbar */
+}
+
+
 .btn-main {
   background-color: var(--main-color);
   padding: 7px 20px;
@@ -191,3 +291,40 @@ h3 {
 .cbg:hover {
   transform: scale(1.05);
 }
+
+.owl-theme .owl-dots .owl-dot span {
+  width: 10px;
+  height: 10px;
+  margin: 5px 12px;
+  background: #D6D6D6;
+  display: block;
+  visibility: visible;
+  transition: opacity 200ms ease;
+  border-radius: 27px;
+  zoom: 0.75 ;
+//  background-color: black;
+
+
+}
+
+.owl-theme .owl-dots .owl-dot.active span, .owl-theme .owl-dots .owl-dot:hover span {
+  background: black;
+}
+.owl-carousel .item {
+  transition: transform 0.5s ease-in-out;
+}
+.cart-badge {
+  transition: transform 0.2s;
+}
+.cart-badge:hover {
+  transform: scale(1.1);
+}
+
+
+
+
+
+
+
+
+
