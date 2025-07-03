@@ -1,27 +1,191 @@
-# Ecommerce
+# FreshCart - Angular E-commerce Platform
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.3.9.
+[![Angular](https://img.shields.io/badge/Angular-17-red.svg)](https://angular.io/)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5.0-blue.svg)](https://www.typescriptlang.org/)
+[![Bootstrap](https://img.shields.io/badge/Bootstrap-5-purple.svg)](https://getbootstrap.com/)
+[![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE.md)
 
-## Development server
+## 📌 Overview
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+FreshCart is a robust and fully-featured e-commerce web application built with Angular 17, featuring server-side rendering (SSR) for optimal performance and SEO. It provides a seamless shopping experience with support for multiple languages, comprehensive user authentication, product browsing, cart management, and secure checkout.
 
-## Code scaffolding
+## 🌟 Live Demo
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+🚀 [![Live Demo](https://img.shields.io/badge/Demo-Live-blue?logo=vercel)](https://ecommerce-eight-beta-30.vercel.app/)
+Explore the full functionality of the app directly in your browser.
 
-## Build
+## 📸 Screenshots
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+|        Screenshot 1        |        Screenshot 2        |
+| :------------------------: | :------------------------: |
+| ![11](/screenshots/11.png) | ![12](/screenshots/12.png) |
+|  ![1](/screenshots/1.png)  |  ![2](/screenshots/2.png)  |
+|  ![3](/screenshots/3.png)  |  ![4](/screenshots/4.png)  |
+|  ![5](/screenshots/5.png)  |  ![6](/screenshots/6.png)  |
+|  ![7](/screenshots/7.png)  |  ![8](/screenshots/8.png)  |
+|  ![9](/screenshots/9.png)  | ![10](/screenshots/10.png) |
 
-## Running unit tests
+## 🚀 Features
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+### 🌐 Internationalization (i18n)
 
-## Running end-to-end tests
+- Supports both English and Arabic languages.
+- Automatically adjusts text direction (RTL/LTR).
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+### 🔒 Authentication
 
-## Further help
+- Secure user registration and login.
+- Password reset functionality with email verification.
+- JWT token-based authentication.
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+### 🛒 Product Management
+
+- Browse and filter products, categories, and brands.
+- Detailed product pages with ratings and image galleries.
+- Advanced pagination and search capabilities.
+
+### 📦 Shopping Cart
+
+- Add, remove, update product quantities dynamically.
+- Real-time cart updates and persistent cart state.
+
+### 📑 Order Processing
+
+- Checkout process with secure payment integration.
+- Order history and status tracking.
+
+### 🎨 Dynamic UI & UX
+
+- Responsive design compatible with all devices.
+- Interactive notifications and loading indicators.
+- Dark mode support.
+
+### 🧩 Modular Architecture
+
+- Standalone components using Angular 17.
+- Clear separation of concerns via services and guards.
+
+### 🧪 Testing
+
+- Comprehensive unit tests with Jasmine.
+- Fully tested components and services.
+
+### 🔧 Developer Tools
+
+- Angular Signals for reactive state management.
+- Interceptors for error handling, loading states, and token management.
+
+---
+
+## 🛠️ Technologies Used
+
+| Category                 | Technologies                              |
+| ------------------------ | ----------------------------------------- |
+| **Frontend**             | Angular 17, TypeScript, SCSS, Bootstrap 5 |
+| **Backend (SSR)**        | Express.js with Angular Universal         |
+| **State Management**     | Angular Signals                           |
+| **Testing**              | Jasmine, Karma                            |
+| **Notifications**        | ngx-toastr, SweetAlert2                   |
+| **Loading Indicators**   | ngx-spinner                               |
+| **Internationalization** | ngx-translate                             |
+| **Build Tools**          | Angular CLI, Webpack                      |
+
+---
+
+---
+
+## 📁 Project Structure
+
+```
+The following shows the core folder and file organization of the project.
+
+src/
+├── app/
+│   ├── components/
+│   │   ├── products/
+│   │   ├── categories/
+│   │   ├── cart/
+│   │   ├── auth/
+│   │   ├── orders/
+│   │   └── navigation/
+│   ├── services/
+│   │   ├── auth.service.ts
+│   │   ├── products.service.ts
+│   │   ├── cart.service.ts
+│   │   ├── categories.service.ts
+│   │   ├── orders.service.ts
+│   │   └── translate.service.ts
+│   ├── guards/
+│   │   ├── auth.guard.ts
+│   │   └── logged-in.guard.ts
+│   ├── interceptors/
+│   │   ├── headers.interceptor.ts
+│   │   ├── errors.interceptor.ts
+│   │   └── loading.interceptor.ts
+│   ├── pipes/
+│   │   ├── search.pipe.ts
+│   │   └── trim-text.pipe.ts
+│   ├── interfaces/
+│   │   ├── product.interface.ts
+│   │   ├── user.interface.ts
+│   │   └── order.interface.ts
+│   └── app.component.ts
+├── assets/
+│   ├── images/
+│   ├── i18n/
+│   │   ├── en.json
+│   │   └── ar.json
+│   └── screenshots/
+├── environments/
+│   ├── environment.ts
+│   └── environment.prod.ts
+├── styles.scss
+├── angular.json
+├── server.ts
+└── package.json
+```
+
+---
+
+## 🚦 Installation & Setup
+
+Follow these steps to install dependencies and run the app locally or in production.
+
+### Prerequisites
+
+- Node.js (v18+ recommended)
+- Angular CLI (v17+)
+
+### Installation
+
+```bash
+git clone https://github.com/ahmedgaafer1/ecommerce.git
+cd ecommerce
+npm install
+```
+
+### Development Server
+
+```bash
+npm run dev:ssr
+```
+
+### Production Build
+
+```bash
+npm run build:ssr
+npm run serve:ssr
+```
+
+---
+
+## 🧑‍💻 Author
+
+- **Ahmed Gaafer**\
+  [GitHub](https://github.com/ahmedgaafer1) | [LinkedIn](https://www.linkedin.com/in/ahmedgaafer/)
+
+---
+
+## 📜 License
+
+This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details.
